@@ -18,12 +18,9 @@ typedef struct dlistint_s
     struct dlistint_s *next;
 } dlistint_t;
 
-/**
- * dlistint_len - returns the number of elements in a dlistint_t list
- * @h: pointer to the head of the list
- *
- * Return: the number of elements in the list
- */
-size_t dlistint_len(const dlistint_t *h);
+/* Function prototypes */
+size_t print_dlistint(const dlistint_t *h);
+dlistint_t *add_dnodeint(dlistint_t **head, const int n);
 
 #endif /* LISTS_H */
+
