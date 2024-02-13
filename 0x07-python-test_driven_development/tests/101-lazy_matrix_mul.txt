@@ -1,0 +1,47 @@
+# 101-lazy_matrix_mul.txt  (tests for NumPy-based matrix multiplication)
+"""
+Tests for the lazy_matrix_mul function 
+"""
+
+import doctest
+import numpy as np 
+lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
+
+## Successful Multiplication Cases
+
+>>> print(lazy_matrix_mul(np.array([[1, 2], [3, 4]]), np.array([[1, 2], [3, 4]])))
+[[ 7 10]
+ [15 22]]
+
+>>> print(lazy_matrix_mul(np.array([[2]]), np.array([[6]])))
+[[12]]
+
+>>> print(lazy_matrix_mul(np.array([[2.5, 0], [-1, 4.8]]), np.array([[1, -2], [0, 1]])))
+[[ 2.5 -5. ]
+ [-1.  6.8]]
+
+## Error Handling: TypeErrors
+
+>>> lazy_matrix_mul([[1, 2], [3, 4]], np.array([[1, 2], [3, 4]])) 
+Traceback (most recent call last):
+...
+TypeError: m_a must be a NumPy ndarray
+
+>>> lazy_matrix_mul(None, np.array([[1, 2], [3, 4]])) 
+Traceback (most recent call last):
+...
+TypeError: m_a must be a NumPy ndarray
+
+## Error Handling: ValueErrors
+
+>>> lazy_matrix_mul(np.array([]), np.array([[1, 2], [3, 4]])) 
+Traceback (most recent call last):
+...
+ValueError: m_a can't be empty
+
+>>> lazy_matrix_mul(np.array([[1, 2], [3, 4]]), np.array([[1], [2, 3]])) 
+Traceback (most recent call last):
+...
+ValueError: m_a and m_b can't be multiplied
+
+doctest.testmod()  # Execute the tests
