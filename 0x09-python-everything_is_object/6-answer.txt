@@ -1,5 +1,3 @@
-s1 = "Best School": A string object with the value "Best School" is created and assigned to the variable s1.
-
-s2 = s1: This line creates another variable s2 and assigns it to point to the same string object that s1 is referencing. Now, both variables refer to the same object in memory.
-
-print(s1 == s2): The == operator is used for comparison. Here, it's checking if the string objects referenced by s1 and s2 have the same value. Since they point to the same object with the string "Best School," the comparison evaluates to True.
+"Best School"
+"Best School"
+"Best School"
